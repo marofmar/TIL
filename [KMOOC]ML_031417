@@ -1,0 +1,15 @@
+# KMOOC ML
+
+## Support Vector Machine
+
+* Margin
+* Support vectors
+* Kernels
+
+## VC Dimension
+
+* Shattering
+* Dichotomy
+
+Higher the margin, lower VC dimension, higher accuracy
+
