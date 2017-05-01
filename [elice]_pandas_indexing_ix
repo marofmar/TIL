@@ -1,0 +1,22 @@
+data type ix
+
+pandas, indexing and selecting data
+
+
+.iloc, .loc, .ix
+
+
+
+
+.iloc
+> able to find the value by 'integer position', but cannot be done by 'label'.
+
+.loc
+> able to find the value by 'label', but cannot be done by 'integer position'.
+
+.ix
+> able to use both integer position and label to find certain value. 
+> If the label is an integer, only label-based index works.
+
+
+
