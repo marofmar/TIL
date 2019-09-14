@@ -1,0 +1,20 @@
+<body>
+	<label for = "nick">Nicknamme Input box</label> 
+	<input type = "text" id = "nick" /> 
+
+<script>
+	// select 
+	var nick = document.getElementById('nick'); 
+
+	// show characters in the input box 
+	nick.value = 'Enter your nickname.' 
+
+    nick.onfocus = function(){
+    	this.style.background = 'orange';
+    	this.value = ''; 
+    }
+</script> 
+
+
+
+</body>
