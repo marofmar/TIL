@@ -1,0 +1,44 @@
+<!DOCTYPE htmml>
+<!--
+[Book] 자바스크림트 프로젝트북 - 권대용 지음
+Sat 14 Sep 2019
+jQuery method was used to implement Javascript animation.
+	It turned out CSS3 animation moves more smoothe compared to that of Javascript. According to the book, CSS3 has been processed with hardward acceleration, so results better performance. -->
+	<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Animation</title> 
+		<script src = "http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+
+		<style>
+			div{
+				width: 100px; height: 100px; 
+				border: 2px solid; 
+				margin-bottom: 20px; 
+			}
+			#box1{transition-duration:2s;}
+		</style> 
+	</head> 
+
+	<body>
+		<h1>CSS animation and Javascript Animation</h1> 
+		<hr> 
+		<div id = 'box1'>css Animation</div> 
+		<div id = 'box2'>Javascript Animation</div> 
+
+		<script>
+			var box1 = document.getElementById('box1');
+			var box2 = document.getElementById('box2'); 
+
+			box1.onclick = function(){
+				this.style.marginLeft = '200px';
+			}; 
+
+			box2.onclick = function(){
+				$(this).animate({
+					marginLeft: '200px'
+				}, 2000);
+			};
+		</script> 
+	</body> 
+	</html> 
