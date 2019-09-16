@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en"> 
+<head>
+	<meta charset = "UTF-8">
+	<title>form OBJECT</title> 
+	<style>
+		label{
+			float: left; 
+			width: 80px; 
+		}
+		input.label{
+			display: block; 
+			margin-bottom: 10px;
+		}
+	</style> 
+</head> 
+<body>
+	<form name = "ffm">
+		<label for = "myId">ID: </label> 
+		<input type = "text" id = "myId" name = "myId" /> 
+		<label for = "pwd">password: </label> 
+		<input type = "password" id = "pwd" name = "pwd" /> 
+
+		<input type = "button" name = "send" value = "LOGIN" /> 
+	</form> 
+
+	<script>
+		var frm = document.frm; // select OBJCET
+		var myId = frm.myId; 
+		var pwd = frm.pwd; 
+		var send_btn = document.frm.send;
+
+		send_btn.onclick = function(){
+			var newId = myId.value,
+				newPwd = pwd.value; 
+
+			//Examine Null
+			if (newId == '' || newPwd == ''){
+				alert('ID or Password has not been entered.');
+			} else{
+				alert(myId.value +',welcome!');
+			}
+		};
+	</script> 
+</body> 
+</html> 
