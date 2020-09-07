@@ -1,0 +1,44 @@
+ -- title, user, score, timestamp, url
+ SELECT SUM(score)
+ FROM hacker_news;
+
+SELECT user, SUM(score)
+FROM hacker_news
+GROUP BY user
+HAVING SUM(score) > 200
+ORDER BY user DESC;
+
+SELECT SUM(score)
+FROM hacker_news; 
+
+SELECT (517 + 282 + 304 + 309)/6366.0;
+
+SELECT user, COUNT(*)
+FROM hacker_news
+WHERE url LIKE '%https://www.youtube.com/watch?v=dQw4w9WgXcQ%'
+GROUP BY user;
+
+SELECT CASE
+    WHEN url LIKE '%github.com/%' THEN 'GitHub'
+    WHEN url LIKE '%medium.com/%' THEN 'Medium'
+    WHEN url LIKE '%nytimes.com/%' THEN 'New York Times'
+    ELSE 'Else'
+  END AS 'Source',
+  COUNT(*)
+FROM hacker_news
+GROUP BY 1;
+
+SELECT timestamp
+FROM hacker_news
+LIMIT 10;  -- YYYY-MM-DD HH:MM:sSS
+
+SELECT timestamp, 
+  strftime('%H', timestamp) AS 'hour',
+  ROUND(AVG(score)) AS 'avg_score',
+  COUNT(*) AS 'number of posts'
+FROM hacker_news
+WHERE timestamp is NOT NULL
+GROUP BY 1
+ORDER BY 1;
+
+
