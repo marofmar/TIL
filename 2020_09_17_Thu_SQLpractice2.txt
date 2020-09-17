@@ -1,0 +1,51 @@
+SELECT *
+FROM countries
+LIMIT 5;
+
+SELECT *
+FROM population_years
+LIMIt 5;
+
+SELECT COUNT(*)
+FROM countries
+WHERE continent = 'Africa';
+
+SELECT SUM(population_years.population)
+FROM countries
+JOIN population_years
+ON countries.id= population_years.country_id
+WHERE countries.continent = 'Oceania'
+  AND population_years.year = 2005;
+
+SELECT AVG(population_years.population) AS 'AVG_population of South America in 2003'
+FROM countries
+JOIN population_years
+ON countries.id = population_years.country_id
+WHERE countries.continent = 'South America'
+  AND population_years.year = 2003;
+
+SELECT *
+FROM countries
+JOIN population_years
+ON countries.id = population_years.country_id
+WHERE population_years.year = 2007
+ORDER BY population_years.population
+LIMIT 1;
+
+SELECT AVG(population_years.population) AS 'AVG population in Poland in the given dataset'
+FROM countries
+JOIN population_years
+ON countries.id = population_years.country_id
+WHERE countries.name = 'Poland';
+
+SELECT COUNT(*) AS '# of countries that have "the" in it'
+FROM countries
+WHERE name LIKE '%The%';
+
+SELECT *
+FROM countries
+JOIN population_years
+ON countries.id = population_years.country_id
+WHERE population_years.year = 2007
+GROUP BY countries.continent;
+
