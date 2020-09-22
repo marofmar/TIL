@@ -3,11 +3,6 @@
 # Tody I Learned (TIL)
 
 
-
-
-
-## Acknowledgments
-
 * Mostly Python
-* Started learning C++, Go, Java, etc
+* Interests in learning other languages such as C, C++, JavaScript and so forth
 * Small steps count!
