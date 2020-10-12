@@ -1,0 +1,52 @@
+SELECT *
+FROM quiz
+LIMIT 5;
+
+SELECT *
+FROM home_try_on
+LIMIT 5;
+
+SELECT *
+FROM purchase
+LIMIT 5;
+
+
+
+
+
+SELECT DISTINCT q.user_id, 
+  h.user_id IS NOT NULL AS 'is_home_try_on',
+  h.number_of_pairs,
+  p.user_id IS NOT NULL AS 'is_purchas'
+FROM quiz q
+LEFT JOIN home_try_on h
+  ON q.user_id = h.user_id 
+LEFT JOIN purchase p
+  ON q.user_id = p.user_id
+LIMIT 10;
+
+
+
+
+-- Chrn rate of January 2017
+SELECT 1.0 *
+(
+  SELECT COUNT(*)
+  FROM subscriptions
+  WHERE subscription_start < '2017-01-01'
+  AND (
+    subscription_end
+    BETWEEN '2017-01-01'
+    AND '2017-01-31'
+  )
+
+) / (
+  SELECT COUNT(*)
+  FROM subscriptions 
+  WHERE subscription_start < '2017-01-01'
+  AND (
+    (subscription_end >='2017-01-01')
+    OR (subscription_end IS NULL)
+  )
+)
+AS result;
